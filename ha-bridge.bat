@@ -2,10 +2,10 @@
 
 goto Header
 /**
- * Windows Launcher for BWS Systems' Amazon Echo Bridge
+ * Windows Launcher for BWS Systems' Amazon Echo Bridge <https://github.com/bwssytems/ha-bridge/>
  *
  * Author: Dale Higgs
- * Version: 1.3.7
+ * Version: 1.3.8
  * License: ISC
  */
 :Header
@@ -16,7 +16,7 @@ rem === Silent Launch Settings ===
 set SILENT=0
 
 rem === HA Bridge Settings ===
-set BRIDGE_JAR=ha-bridge-1.3.7.jar
+set BRIDGE_JAR=ha-bridge-1.3.8.jar
 set BRIDGE_IP=default
 set BRIDGE_PORT=
 set BRIDGE_DB=
@@ -42,8 +42,8 @@ rem === Get this computer's IP address (if set to "default") ===
 if [%BRIDGE_IP%] EQU [default] (for /f "skip=1 delims={}, " %%A in ('wmic nicconfig get ipaddress') do for /f "tokens=1" %%B in ("%%~A") do set "BRIDGE_IP=%%~B")
 
 rem === Validate the jar file ===
-if not defined BRIDGE_JAR (echo ERROR: BRIDGE_JAR is not defined in settings && goto :eof)
-if not exist "%BRIDGE_JAR%" (echo ERROR: JAR file "%BRIDGE_JAR%" could not be found && goto :eof)
+if not defined BRIDGE_JAR (echo ERROR: BRIDGE_JAR is not defined in settings && pause && goto :eof)
+if not exist "%BRIDGE_JAR%" (echo ERROR: JAR file "%BRIDGE_JAR%" could not be found && pause && goto :eof)
 
 rem === Build the arguments list ===
 set ARGS=-jar
