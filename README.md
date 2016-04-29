@@ -7,6 +7,9 @@ Configurable Windows launcher for [BWS Systems'](http://www.bwssystems.com/) [Am
 Place the `ha-bridge.bat` file in the same directory as the BWS Systems' `ha-bridge-X.X.X.jar` file.
 
 ## Configuration
+* **VERSION**
+  * Specify a version number to launch
+  * Default (empty) is auto-detection based on last file modified time
 * **SILENT**
   * 0 = Show console window
   * 1 = Hide console window
@@ -19,6 +22,10 @@ Place the `ha-bridge.bat` file in the same directory as the BWS Systems' `ha-bri
   * Default is `data/habridge.config`
 
 ## Changelog
+
+#### 2016-04-28
+* Added auto-detection for latest version (uses Last Modified file time)
+* Skip pause commands when running silently
 
 #### 1.4.1
 * Removed old command line arguments
